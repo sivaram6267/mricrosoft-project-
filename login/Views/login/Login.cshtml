@@ -1,0 +1,77 @@
+﻿@model login.Models.Userlogin
+@{
+    ViewBag.Title = "Login";
+}
+
+
+
+
+@using (Html.BeginForm())
+{
+
+    @Html.ValidationSummary(true)
+
+<div style="border: solid 1px #ccc; padding: 30px 0 30px 30px; border-radius: 5px;
+        width: 325px; margin: auto; display: table;">
+    <center>
+        <img src="~/Images/lancesoft2.png" />
+    </center>
+   
+
+    <section class="vh-100 gradient-custom">
+        <div class="container py-5 h-50">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+                    <div class="card bg-opacity-100 text-blue" style="border-radius: 1rem;">
+                        <div class="card-body p-5 text-center">
+
+                            <div class="mb-md-5 mt-md-4 pb-5">
+
+                                <div class="form-outline form-white mb-4">
+
+                                     @Html.DisplayName("UserName")
+                                    @Html.TextBoxFor(model => model.UserName)
+
+
+                                    @*@Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+                                    @*<div style="height: 20px;">
+
+                                    </div>*@
+                                </div>
+
+                                <div class="form-outline form-white mb-4">
+
+                                    @Html.DisplayName("Password")
+                                    @Html.PasswordFor(model => model.Password)
+                                    @*@Html.Password("Password")*@
+                                    @*@Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })*@
+
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                               
+                                <button type="submit" value="Login" class="btn btn-info">Login</button>
+
+                                @*<button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>*@
+
+                                <div class="d-flex justify-content-center text-center mt-4 pt-1">
+                                    <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>
+                                    <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>
+                                    <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+}
+

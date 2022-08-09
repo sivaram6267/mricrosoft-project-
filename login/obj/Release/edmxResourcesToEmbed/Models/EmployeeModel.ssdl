@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employee_ProfileModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Billing_Id" />
+    </Key>
+    <Property Name="Billing_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cubical_cost" Type="money" />
+    <Property Name="Food_cost" Type="money" />
+    <Property Name="Transport_cost" Type="money" />
+    <Property Name="Emp_Id_FK" Type="int" />
+  </EntityType>
+  <EntityType Name="Client_Details">
+    <Key>
+      <PropertyRef Name="Client_Id" />
+    </Key>
+    <Property Name="Client_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Desination_at_client" Type="varchar" MaxLength="50" />
+    <Property Name="Client_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Billing" Type="money" />
+    <Property Name="Po_start_Date" Type="date" />
+    <Property Name="Po_end_date" Type="date" />
+    <Property Name="Emp_id_fk" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee_details">
+    <Key>
+      <PropertyRef Name="Emp_Id" />
+    </Key>
+    <Property Name="Emp_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Emp_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Joining_Date" Type="date" />
+    <Property Name="Dob" Type="date" />
+    <Property Name="Salary" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Practice" Type="varchar" MaxLength="50" />
+    <Property Name="Designation_Lancesoft" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK__Bill__Emp_Id_FK__3D5E1FD2">
+    <End Role="Employee_details" Type="Self.Employee_details" Multiplicity="0..1" />
+    <End Role="Bill" Type="Self.Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_details">
+        <PropertyRef Name="Emp_Id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Emp_Id_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Client_De__Emp_i__398D8EEE">
+    <End Role="Employee_details" Type="Self.Employee_details" Multiplicity="0..1" />
+    <End Role="Client_Details" Type="Self.Client_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_details">
+        <PropertyRef Name="Emp_Id" />
+      </Principal>
+      <Dependent Role="Client_Details">
+        <PropertyRef Name="Emp_id_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Employee_ProfileModel1StoreContainer">
+    <EntitySet Name="Bill" EntityType="Self.Bill" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Client_Details" EntityType="Self.Client_Details" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee_details" EntityType="Self.Employee_details" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Bill__Emp_Id_FK__3D5E1FD2" Association="Self.FK__Bill__Emp_Id_FK__3D5E1FD2">
+      <End Role="Employee_details" EntitySet="Employee_details" />
+      <End Role="Bill" EntitySet="Bill" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Client_De__Emp_i__398D8EEE" Association="Self.FK__Client_De__Emp_i__398D8EEE">
+      <End Role="Employee_details" EntitySet="Employee_details" />
+      <End Role="Client_Details" EntitySet="Client_Details" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Employee_ProfileModel1StoreContainer" CdmEntityContainer="Emp_Entities">
+    <EntitySetMapping Name="Employee_details">
+      <EntityTypeMapping TypeName="Employee_ProfileModel1.Employee_details">
+        <MappingFragment StoreEntitySet="Employee_details">
+          <ScalarProperty Name="Emp_Id" ColumnName="Emp_Id" />
+          <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+          <ScalarProperty Name="Joining_Date" ColumnName="Joining_Date" />
+          <ScalarProperty Name="Dob" ColumnName="Dob" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Practice" ColumnName="Practice" />
+          <ScalarProperty Name="Designation_Lancesoft" ColumnName="Designation_Lancesoft" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bills">
+      <EntityTypeMapping TypeName="Employee_ProfileModel1.Bill">
+        <MappingFragment StoreEntitySet="Bill">
+          <ScalarProperty Name="Emp_Id_FK" ColumnName="Emp_Id_FK" />
+          <ScalarProperty Name="Transport_cost" ColumnName="Transport_cost" />
+          <ScalarProperty Name="Food_cost" ColumnName="Food_cost" />
+          <ScalarProperty Name="Cubical_cost" ColumnName="Cubical_cost" />
+          <ScalarProperty Name="Billing_Id" ColumnName="Billing_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Client_Details">
+      <EntityTypeMapping TypeName="Employee_ProfileModel1.Client_Details">
+        <MappingFragment StoreEntitySet="Client_Details">
+          <ScalarProperty Name="Emp_id_fk" ColumnName="Emp_id_fk" />
+          <ScalarProperty Name="Po_end_date" ColumnName="Po_end_date" />
+          <ScalarProperty Name="Po_start_Date" ColumnName="Po_start_Date" />
+          <ScalarProperty Name="Billing" ColumnName="Billing" />
+          <ScalarProperty Name="Client_Name" ColumnName="Client_Name" />
+          <ScalarProperty Name="Desination_at_client" ColumnName="Desination_at_client" />
+          <ScalarProperty Name="Client_Id" ColumnName="Client_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

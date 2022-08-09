@@ -1,0 +1,173 @@
+﻿@model login.Models.AddEmployeeDetails
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    @*<h4>AddEmployeeDetails</h4>*@
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Emp_Id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Emp_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Emp_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Joining_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Joining_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Salary)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Salary)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Practice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Practice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Designation_Lancesoft)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Designation_Lancesoft)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cubical_cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cubical_cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Food_cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Food_cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Transport_cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Transport_cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Desination_at_client)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Desination_at_client)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Client_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Client_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Billing)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Billing)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Po_start_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Po_start_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Po_end_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Po_end_date)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tenure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tenure)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Paidtillnow)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paidtillnow)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Bench_Tenure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bench_Tenure)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Bench_expences)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bench_expences)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Profit_OR_loss)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profit_OR_loss)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Employee_ProfileEntities-Web.config Connection String" description="Employee_ProfileEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.loginModel.csdl|res://*/Models.loginModel.ssdl|res://*/Models.loginModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-F8NDI35;initial catalog=Employee_Profile;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Gurram\ Sujatha\\source\\repos\\login\ \(2\)\\login\\login\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Employee_ProfileEntities']/@connectionString" />
+  </parameter>
+  <parameter name="Emp_Entities-Web.config Connection String" description="Emp_Entities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Models.EmployeeModel.csdl|res://*/Models.EmployeeModel.ssdl|res://*/Models.EmployeeModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=DESKTOP-F8NDI35;initial catalog=Employee_Profile;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Gurram\ Sujatha\\source\\repos\\login\ \(2\)\\login\\login\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Emp_Entities']/@connectionString" />
+  </parameter>
+</parameters>

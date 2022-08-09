@@ -1,0 +1,134 @@
+﻿@model List<login.Models.AddEmployeeDetails>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<div>
+    @*<h4>AddEmployeeDetails</h4>*@
+    <hr />
+
+    <table class="table">
+
+        <tr>
+            <th>
+                @Html.DisplayName("Employee Name")
+            </th>
+            <th>
+                @Html.DisplayName("Joining_Date")
+            </th>
+            <th>
+                @Html.DisplayName("Dob")
+            </th>
+            <th>
+                @Html.DisplayName("Salary")
+            </th>
+            <th>
+                @Html.DisplayName("Practice")
+            </th>
+            <th>
+                @Html.DisplayName("Designation at Lancesoft")
+            </th>
+            <th>
+                @Html.DisplayName("Client Name")
+            </th>
+            <th>
+                @Html.DisplayName("Desination at client")
+            </th>
+            <th>
+                @Html.DisplayName("Emp_salary at client")
+            </th>
+            <th>
+                @Html.DisplayName("Po start Date")
+            </th>
+            <th>
+                @Html.DisplayName("Po end date")
+            </th>
+            <th>
+                @Html.DisplayName("Cubical cost")
+            </th>
+            <th>
+                @Html.DisplayName("Food cost")
+            </th>
+            <th>
+                @Html.DisplayName("Transport cost")
+            </th>
+            @*<th>
+                    @Html.DisplayName("Emp_Name")
+                </th>*@
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Emp_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Joining_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Dob)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Salary)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Practice)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Designation_Lancesoft)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Client_Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Desination_at_client)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Billing)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Po_start_Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Po_end_date)
+                </td>
+                @*<td>
+                    @Html.DisplayFor(modelItem => item.Dob)
+                </td>*@
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cubical_cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Food_cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Transport_cost)
+                </td>
+
+                <td>
+
+
+                    
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Emp_Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Emp_Id })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Emp_Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+
+
+</div>
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |*@
+
+</p>

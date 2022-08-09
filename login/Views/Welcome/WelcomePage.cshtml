@@ -1,0 +1,37 @@
+﻿@model IEnumerable<login.Models.Employee_details>
+
+@{
+    ViewBag.Title = "WelcomePage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div style="padding:5px;">
+    <div style="float:right">
+        <h2>
+            Welcome :@User.Identity.Name
+        </h2>
+    </div>
+    <html>
+    <head>
+        <style>
+            a {
+                margin-left: 30px;
+                /* specifies a gap of 30px on the left side */
+            }
+        </style>
+    </head>
+    <body>
+
+
+       
+
+        <a href="#"> @Html.ActionLink("Employee_Details", "Index", "AddEmplyeeDetails")</a>
+        <a href="#">@Html.ActionLink("Add Employee", "Create", "AddEmplyeeDetails")</a>
+    </body>
+
+
+</div>
+
+

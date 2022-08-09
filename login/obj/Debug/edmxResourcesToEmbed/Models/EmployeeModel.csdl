@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Employee_ProfileModel1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Employee_details">
+    <Key>
+      <PropertyRef Name="Emp_Id" />
+    </Key>
+    <Property Name="Emp_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Emp_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Joining_Date" Type="DateTime" Precision="0" />
+    <Property Name="Dob" Type="DateTime" Precision="0" />
+    <Property Name="Salary" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Practice" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Designation_Lancesoft" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Bills" Relationship="Employee_ProfileModel1.FK__Bill__Emp_Id_FK__3D5E1FD2" FromRole="Employee_details" ToRole="Bill" />
+    <NavigationProperty Name="Client_Details" Relationship="Employee_ProfileModel1.FK__Client_De__Emp_i__398D8EEE" FromRole="Employee_details" ToRole="Client_Details" />
+  </EntityType>
+  <EntityContainer Name="Emp_Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Employee_details" EntityType="Self.Employee_details" />
+    <EntitySet Name="Bills" EntityType="Employee_ProfileModel1.Bill" />
+    <AssociationSet Name="FK__Bill__Emp_Id_FK__3D5E1FD2" Association="Employee_ProfileModel1.FK__Bill__Emp_Id_FK__3D5E1FD2">
+      <End Role="Employee_details" EntitySet="Employee_details" />
+      <End Role="Bill" EntitySet="Bills" />
+    </AssociationSet>
+    <EntitySet Name="Client_Details" EntityType="Employee_ProfileModel1.Client_Details" />
+    <AssociationSet Name="FK__Client_De__Emp_i__398D8EEE" Association="Employee_ProfileModel1.FK__Client_De__Emp_i__398D8EEE">
+      <End Role="Employee_details" EntitySet="Employee_details" />
+      <End Role="Client_Details" EntitySet="Client_Details" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Bill">
+    <Key>
+      <PropertyRef Name="Billing_Id" />
+    </Key>
+    <Property Name="Billing_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Cubical_cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Food_cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Transport_cost" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Emp_Id_FK" Type="Int32" />
+    <NavigationProperty Name="Employee_details" Relationship="Employee_ProfileModel1.FK__Bill__Emp_Id_FK__3D5E1FD2" FromRole="Bill" ToRole="Employee_details" />
+  </EntityType>
+  <Association Name="FK__Bill__Emp_Id_FK__3D5E1FD2">
+    <End Type="Employee_ProfileModel1.Employee_details" Role="Employee_details" Multiplicity="0..1" />
+    <End Type="Employee_ProfileModel1.Bill" Role="Bill" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_details">
+        <PropertyRef Name="Emp_Id" />
+      </Principal>
+      <Dependent Role="Bill">
+        <PropertyRef Name="Emp_Id_FK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Client_Details">
+    <Key>
+      <PropertyRef Name="Client_Id" />
+    </Key>
+    <Property Name="Client_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Desination_at_client" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Client_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Billing" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Po_start_Date" Type="DateTime" Precision="0" />
+    <Property Name="Po_end_date" Type="DateTime" Precision="0" />
+    <Property Name="Emp_id_fk" Type="Int32" />
+    <NavigationProperty Name="Employee_details" Relationship="Employee_ProfileModel1.FK__Client_De__Emp_i__398D8EEE" FromRole="Client_Details" ToRole="Employee_details" />
+  </EntityType>
+  <Association Name="FK__Client_De__Emp_i__398D8EEE">
+    <End Type="Employee_ProfileModel1.Employee_details" Role="Employee_details" Multiplicity="0..1" />
+    <End Type="Employee_ProfileModel1.Client_Details" Role="Client_Details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee_details">
+        <PropertyRef Name="Emp_Id" />
+      </Principal>
+      <Dependent Role="Client_Details">
+        <PropertyRef Name="Emp_id_fk" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
