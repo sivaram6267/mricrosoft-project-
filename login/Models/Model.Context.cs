@@ -18,7 +18,7 @@ namespace login.Models
         public Employee_ProfileEntities1()
             : base("name=Employee_ProfileEntities1")
         {
-           this.Database.CommandTimeout=60;
+           this.Database.CommandTimeout=900;
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
